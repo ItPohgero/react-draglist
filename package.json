@@ -2,14 +2,20 @@
   "name": "react-draglist",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run prettier",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["itpohgero", "react-draglist", "draggable", "react drag", "wahyu agus arifin"],
+  "author": "wahyu agus arifin",
+  "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.2.79",
     "eslint": "^9.0.0",
@@ -19,5 +25,17 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItPohgero/react-draglist.git"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }
