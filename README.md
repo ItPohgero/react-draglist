@@ -34,36 +34,48 @@ import React from "react";
 import { useDragList } from "react-draglist-ipo";
 
 const initialItems = [
-  { id: 0, text: "Wahyu", color: "#4d7c0f" },
-  { id: 1, text: "Agus", color: "#7e22ce" },
-  { id: 2, text: "Arifin", color: "#9f1239" },
+  { id: 0, text: "Wahyu" },
+  { id: 1, text: "Agus" },
+  { id: 2, text: "Arifin" },
 ];
 
 export default function App() {
   const { items, getItemProps } = useDragList({
     initialItems,
   });
+
+  const COLOR = (n: number) => {
+    switch (n) {
+      case 1:
+        return "bg-red-600 hover:bg-red-800"
+      case 2:
+        return "bg-indigo-600 hover:bg-indigo-800"
+      default:
+        return "bg-lime-600 hover:bg-lime-800"
+    }
+  }
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <ul>
-        {items?.map((item: any) => (
-          <li className="flex gap-4 my-2" key={item.id}>
-            <button
-              className="w-10 h-10"
-              {...getItemProps(item.id)}
-              style={{ background: item.color }}
-            >
-              ::
-            </button>
-            <span>{item.text}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="max-w-3xl">
+        <ul>
+          {items?.map((item: any) => (
+            <li className="flex gap-4 my-2 items-center" key={item.id}>
+              <button
+                className={`w-10 h-10 rounded-lg text-2xl ${COLOR(item.id)}`}
+                {...getItemProps(item.id)}
+              >
+                ::
+              </button>
+              <span>{item?.id + 1} : {item.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
 ```
 You can customize the appearance and behavior of the DragList component according to your application requirements.
-
 ### Demo
 
+[Here](https://react-draglist-example.vercel.app/)
