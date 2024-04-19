@@ -1,5 +1,5 @@
 {
-  "name": "react-draglist",
+  "name": "react-draglist-ipo",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/cjs/index.js",
@@ -11,9 +11,16 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build",
     "prepublishOnly": "npm run prettier",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "update": "npm publish --access=public"
   },
-  "keywords": ["itpohgero", "react-draglist", "draggable", "react drag", "wahyu agus arifin"],
+  "keywords": [
+    "itpohgero",
+    "react-draglist-ipo",
+    "draggable",
+    "react drag",
+    "wahyu agus arifin"
+  ],
   "author": "wahyu agus arifin",
   "license": "MIT",
   "devDependencies": {
