@@ -4,24 +4,24 @@ This package facilitates the creation of draggable lists in React applications.
 
 ### Installation
 
-You can install the react-draglist package using npm, yarn, or pnpm.
+You can install the react-draglist-ipo package using npm, yarn, or pnpm.
 
 npm
 
 ```bash
-npm install react-draglist
+npm install react-draglist-ipo
 ```
 
 yarn
 
 ```bash
-yarn add react-draglist
+yarn add react-draglist-ipo
 ```
 
 pnpm
 
 ```bash
-pnpm add react-draglist
+pnpm add react-draglist-ipo
 ```
 
 ### Usage
@@ -31,7 +31,7 @@ Once installed, you can import and use the DragList component in your React appl
 ```tsx
 "use client";
 import React from "react";
-import useDragList from "react-draglist";
+import useDragList from "react-draglist-ipo";
 
 const initialItems = [
   { id: 0, text: "One", color: "#616AFF" },
